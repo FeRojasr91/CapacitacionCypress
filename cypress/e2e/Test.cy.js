@@ -21,11 +21,33 @@ describe('Test - Formulario', () => {
   })  
   
   it('Validar botón Enter', () => { /*al agregar el it.only, significa que sólo va a ejecutar esta prueba haciendola visible.*/
-      cy.visit('https://testautomationpractice.blogspot.com/')
-      cy.get('button[name="start"]').click()
-      cy.get('button[name="stop"]').should('be.visible')/*se muestra uso de contains a continuación*/
-      cy.contains('STOP').should('be.visible')
-      cy.contains('button','STOP').click()
+    cy.visit('https://testautomationpractice.blogspot.com/')
+    cy.get('button[name="start"]').click()
+    cy.get('button[name="stop"]').should('be.visible')/*se muestra uso de contains a continuación*/
+    cy.contains('STOP').should('be.visible')
+    cy.contains('button','STOP').click()
+  })
+
+  it('Selección de elementos de tipo checkbox', () =>{
+    /**Ejemplos de tamaño de imagen de mi cypress */
+    //cy.viewport(500,330)
+    cy.viewport('ipad-mini', "landscape") //Al usar landscape invierte las dimensiones
+    cy.visit('https://testautomationpractice.blogspot.com/')
+    //cy.get('input[type="checkbox"][class="form-check-input"]').check()/*Realiza un chequeo de todas las opciones, seleccionandolas*/
+    cy.get('input[type="checkbox"][class="form-check-input"]').each(($check)=>{/*Recupero todos los elementos tipo checkbox del form check input. Con each itero sobre un conjunto de elementos*/
+        //de los elementos, genero por ejemplo (una lista): [checkbox1, checkbox2,....]
+      const valueText = $check.attr('value') /*el elemento que obtengo en check (sacando el atributo value) lo guardo en una const tipo texto */
+      if(valueText.startsWith('s')){ /**El inicia con la letra "S" */
+        cy.wrap($check).check()   //Va a seleccionar solo los elementos que empiezan con "s"     
+      }
+    })
+  })
+
+  xit('Link que abre una nueva pestaña', () =>{ /**Al usar xit, significa que este test queda deshabilitado, por tanto, no corre*/
+    cy.visit('https://testautomationpractice.blogspot.com/')
+    //cy.get('button[onclick="myFunction()"]').click()
+    cy.get('button[onclick="myFunction()"]').invoke('removeAttr','onclick').click()/**Vamos a remover la funcion onclick para que no se abra una nueva pestaña aparte */
+    
   })
 
 
