@@ -3,8 +3,8 @@ const el = require('./elements').ELEMENTS
 
 class Login{
     
-    accesarURL() {
-        cy.visit(el.url)
+    accesarURL(url) {
+        cy.visit(url)
         cy.contains('Swag Labs').should('be.visible')
         /*En caso de usar imagen para validar el assertion, se usa:
         cy.get(el.imgSwagLabs).should('be.visible')        
