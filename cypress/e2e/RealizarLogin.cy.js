@@ -18,10 +18,12 @@ describe('Realizar login', function(){
     })
 
     beforeEach(function(){
-        Login.accesarURL('/')
-        //cy.url().should('include','saucedemo')/**Validamos que nuestra URL tenga la palabra saucedemo */
+        //Login.accesarURL('/') /**se comenta Debido a que se agrega nuevo script en commands */
+        cy.newVisit('https://www.saucedemo.com')
+        cy.url().should('include','saucedemo')/**Validamos que nuestra URL tenga la palabra saucedemo */
         //se deja oculta lo anterior, ya que se tratará de trabajar sobre lo agregado en commands.js, editando tambn 
         //cy.visit(url) por cy.visit(url, 'saucedemo') agregado en index.js
+        //el día 20-11 vuelvo a habilitar cy.url().should('include','saucedemo'), ya que dejo el command relacionado a esto de la url como comentario.
     })
 
 

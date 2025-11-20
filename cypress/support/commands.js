@@ -27,6 +27,31 @@ Cypress.Commands.add('realizarLogin', (user, password) => {
     cy.get('#postal-code').type(zipCode)
  })
 
+/*Cypress.Commands.overwrite('visit', (url, validarContenido)=>{
+    cy.visit(url)
+    cy.url().should('contain', validarContenido)
+})
+*/
+
+Cypress.Commands.add('newVisit', (url) => {
+   //Validar que la URL sea un string válido
+   if (typeof url !== 'string' || !/^https?:\/\//.test(url)){
+      throw new Error('newVisit: URL inválida');
+   }
+   //Crea una nueva ventana de navegación
+   cy.window({ log: false }).then((win) => {
+      win.addEventListener('load', () => resolve(), {once:true });
+      // activar la navegación
+      win.location.href = url;
+   });
+
+   //Comprueba si el documento está en estado 'Completo'
+   cy.document().its('readyState').should('equal', 'complete');
+});
+
+
+
+
 //
 //
 // -- This is a child command --

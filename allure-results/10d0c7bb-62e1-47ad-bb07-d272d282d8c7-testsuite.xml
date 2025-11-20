@@ -1,0 +1,52 @@
+<?xml version='1.0'?>
+<ns2:test-suite xmlns:ns2='urn:model.allure.qatools.yandex.ru' start='1763657524750' stop='1763657528839'>
+    <name>Realizar login</name>
+    <title>Realizar login</title>
+    <test-cases>
+        <test-case start='1763657524784' status='passed' stop='1763657527240'>
+            <name>Realizar Login con Éxito</name>
+            <title>Realizar Login con Éxito</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1763657527263' status='passed' stop='1763657527915'>
+            <name>Realizar Login con contraseña Fallida</name>
+            <title>Realizar Login con contraseña Fallida</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1763657527927' status='passed' stop='1763657528415'>
+            <name>Realizar Login con usuario Fallido</name>
+            <title>Realizar Login con usuario Fallido</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+        </test-case>
+        <test-case start='1763657528431' status='broken' stop='1763657528836'>
+            <name>Realizar compra con usuario exitoso</name>
+            <title>Realizar compra con usuario exitoso</title>
+            <labels/>
+            <parameters/>
+            <steps/>
+            <attachments/>
+            <failure>
+                <message>Cannot read properties of undefined (reading 'users')</message>
+                <stack-trace>TypeError: Cannot read properties of undefined (reading 'users')
+                    at Context.eval (webpack://capacitacioncypress/./cypress/e2e/RealizarLogin.cy.js:64:53)
+                    at runnable.fn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:137464:19)
+                    at callFn (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:156061:21)
+                    at Runnable.run (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:156048:7)
+                    at &lt;unknown> (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:161972:30)
+                    at PassThroughHandlerContext.finallyHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:4042:23)
+                    at PassThroughHandlerContext.tryCatcher (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1777:23)
+                    at Promise._settlePromiseFromHandler (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1489:31)
+                    at Promise._settlePromise (https://www.saucedemo.com/__cypress/runner/cypress_runner.js:1546:18)</stack-trace>
+            </failure>
+        </test-case>
+    </test-cases>
+</ns2:test-suite>

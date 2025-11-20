@@ -1,0 +1,5 @@
+"DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
+"","510","Realizar Login con usuario Fallido","","Thu Nov 20 13:14:23 CLST 2025","passed","Thu Nov 20 13:14:23 CLST 2025","","Realizar login","Realizar login","Realizar Login con usuario Fallido"
+"","371","Realizar compra con usuario exitoso","","Thu Nov 20 13:14:23 CLST 2025","broken","Thu Nov 20 13:14:24 CLST 2025","","Realizar login","Realizar login","Realizar compra con usuario exitoso"
+"","704","Realizar Login con contraseña Fallida","","Thu Nov 20 13:14:22 CLST 2025","passed","Thu Nov 20 13:14:23 CLST 2025","","Realizar login","Realizar login","Realizar Login con contraseña Fallida"
+"","2505","Realizar Login con Éxito","","Thu Nov 20 13:14:20 CLST 2025","passed","Thu Nov 20 13:14:22 CLST 2025","","Realizar login","Realizar login","Realizar Login con Éxito"
